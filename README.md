@@ -5,8 +5,11 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+
+Brian Icaro Diaz Marques:brian.icaro.dm@gmail.com<br>
+Ramon Kazushi Cossual Sakurada:kazushisakurada@icloud.com<br>
+Pedro Cruz Nunes Silva: pedrocruzns@gmail.com<br>
+Marcelo Oliveira: falta_inserir_email_do_celão<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
