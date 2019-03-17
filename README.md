@@ -9,7 +9,7 @@ Integrantes do grupo<br>
 Brian Icaro Diaz Marques: brian.icaro.dm@gmail.com<br>
 Ramon Kazushi Cossual Sakurada: kazushisakurada@icloud.com<br>
 Pedro Cruz Nunes Silva: pedrocruzns@gmail.com<br>
-Marcelo Oliveira: falta_inserir_email_do_celão<br>
+Marcelo Oliveira: Mos.marcelo17@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 > O projeto tem como objetivo auxiliar no descarte e na coleta de lixo, mostrando os níveis de lixo presente nas lixeiras para assim saber quando é possível fazer o recolhimento do lixo ou se é possível efetuar o descarte de lixo na lixeira, reduzindo uma ida desnecessária ao local e planejando assim uma melhor rota para a coleta.<br>
