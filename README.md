@@ -16,13 +16,6 @@ Marcelo Oliveira: Mos.marcelo17@gmail.com<br>
 
 
 ### 3.MINI-MUNDO Novo<br>
-
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
 > O sistema propoe uma solução para a organização relacionada a manutenção de um conjunto de lixeiras de um condomínio.  A proposta seria criar um app, chamado "TrashMe", que mostrasse para usuários e funcionários do condomínio, o estado que as lixeiras se encontram, antes de descer com o lixo da sua casa, ou antes de verificar quais lixeiras devem ser recolhidas, respectivamente. Com isso, propomos um maior controle, e organização do tempo de trabalho dos funcionários, como também melhoramos a qualidade de vida do morador, que não precisa retirar todo o lixo da casa, e voltar com ele depois de descer e subir um lance de escadas.
 Em relação as lixeiras, nós trabalharemos com um sensor, que nos retorna o estado, ou "situação" que ela se encontra, que foi um valor definido em 5 pontos: Vazia/0%, Quase na metade/25%, Metade da capacidade/50%, Quase em sua lotação máxima/75%, e Em Lotação máxima/100%. Nos momentos que ela estivesse entre 75 e 100%, os funcionários seriam notificados, para que houvesse a troca e reposição dos sacos das lixeiras.
 Em relação aos funcionários, seriam armazenadas as informações de cadastro deles, e seria liberado para eles a permissão de enviar uma notificação para os moradores que estavam esperando, para poder descer com o lixo.
@@ -34,15 +27,11 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 [Protótipo](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMe.pdf)
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que informe quais são os gerentes de cada departamento incluindo as seguintes informações: número do departamento,  nome do departamento, e nome do gerente.
-* Relatório de empregados por projeto incluindo as seguintes informações: número do projeto, nome do projeto, rg do empregado, nome do empregado e quantidade de horas de trabalho do empregado alocadas ao projeto.
-* Relatório de empregados com dependentes incluindo as seguintes informações: rg do empregado, nome do empregado, nome do dependente, tipo de relação, data de nascimento do dependente e sexo do dependente.
-* Relatório com a quantidade de empregados por cada departamento incluindo as seguintes informações: nome do departamento, supervisor e quantidade de empregados alocados no departamento.
-* Relatório de supervisores e supervisionados incluindo as seguintes informações: nome do supervisor e nome do supervisionado.
+* Relatório do volume atual das lixeiras que informe: ID da lixeira, data e hora da última atualização, seu volume anterior e o atual;
+* Relatório das lixeiras próximas disponíveis para descarte que informe: coordenadas e ID’s das lixeiras próximas;
+* Relatório das lixeiras que atingiram nível igual ou superior a 70% da capacidade máxima que informe: código e nível de preenchimento das lixeiras;
+* Relatório da rota otimizada para o motorista que informe a rota e o seu tempo médio estimado;
+* Relatório da situação operante das lixeiras que informe: status de operação (operante ou inoperante) e descrição de situação
  
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
