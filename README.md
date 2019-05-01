@@ -60,10 +60,34 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [E-Xames Online]: [Gabriel Viggiano, Morgana Vettorazzi, Renato Bellumat, Ícaro Gandine]
+    [Lixeira Inteligente]: [Lavinia Corteletti, Jackson William, Thiago Moreira, Vinicius Freitas]
 
 #### 5.2 DECISÕES DE PROJETO
+
+* id_usuario/lixeira/manutencao/situacao/permissao/nv_lixo : Decidimos manter todos os "id" do projeto, serão 
+    trabalhados com o tipo serial,que é um int, mas que age de forma sequencial, conforme for inserido na tabela.
+    Todas as tabelas do projeto possuem um ID,para poderem ser identificadas por ele.
+    
+* Situação/NV_Lixo: Decidiumos deixar os dois dados separados, para evitar possíveis confusões entre o valor
+    de ambos. Assim sendo, a situacao nos entrega a informação sobre a lixeira, se ela se encontra operante
+    ou não na determinada lixeira, enquanto o nv_lixo nos mostra em qual nivel que a lixeira se encontra,
+    variando entre vazia(valor: 'vazio'), até estar lotada(valor: 'cheio').
+    
+* Permissão: A fim de determinar quem pode fazer qual requisição nas lixeiras, definimos dois tipos de permissão: 'Morador',
+    e 'Funcionario', para poder controlar o recolhimento, manutenção, requisições e afins.
+    
+* Usuário: Para cadastro de usuário, decidimos optar pelo simples, utilizando apenas email, nome e senha para cadastro,
+    e então atribuimos uma id ao usuário(id_usuario), assim como a sua permissao(id_permissao).
+    
+* Lixeira: Para a lixeira, alem de darmos uma identificação com serial para ela, damos um nome, para facilitar a sua
+    localização no determinado setor, e sua localização com latitude/longitude.
+
+* Manutenção: Para a questão da manutenção, a gente decidiu manter data e hora separadas, em vez de fazer a utilização de um
+    'datetime' ou 'timestamp', por crer que pode vir a causar uma melhor organização da manutenção que virá a ocorrer
+    nas determinadas lixeiras. Além disso, é armazenada uma id da manutenção, para caso haja necessidade de protocolar as
+    manutenções ocorridas, o id do usuário que vai realizar a manutenção, e a lixeira a ser consertada/esvaziada.
+        
     [atributo]: [descrição da decisão]
     
     EXEMPLO:
@@ -71,7 +95,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     pode possuir para cada departamento mais de uma localização... 
     b) justifique!
 
->## Marco de Entrega 02 em: (17/09/2018)<br>
+>## Marco de Entrega 02 em: (30/04/2019)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
     
