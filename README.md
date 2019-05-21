@@ -65,26 +65,26 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 #### 5.2 DECISÕES DE PROJETO
 
-* id_usuario/lixeira/manutencao/situacao/permissao/nv_lixo : Decidimos manter todos os "id" do projeto, serão 
+* **id_usuario/lixeira/manutencao/situacao/permissao/nv_lixo** : Decidimos manter todos os "**id**" do projeto, serão 
     trabalhados com o tipo serial,que é um int, mas que age de forma sequencial, conforme for inserido na tabela.
     Todas as tabelas do projeto possuem um ID,para poderem ser identificadas por ele.
     
-* Situação/NV_Lixo: Decidiumos deixar os dois dados separados, para evitar possíveis confusões entre o valor
+* **Situação/NV_Lixo**: Decidimos deixar os dois dados separados, para evitar possíveis confusões entre o valor
     de ambos. Assim sendo, a situacao nos entrega a informação sobre a lixeira, se ela se encontra operante
     ou não na determinada lixeira, enquanto o nv_lixo nos mostra em qual nivel que a lixeira se encontra,
-    variando entre vazia(valor: 'vazio'), até estar lotada(valor: 'cheio').
+    variando entre vazia(valor: `vazio`), até estar lotada(valor: `cheio`).
     
-* Permissão: A fim de determinar quem pode fazer qual requisição nas lixeiras, definimos dois tipos de permissão: 'Morador',
-    e 'Funcionario', para poder controlar o recolhimento, manutenção, requisições e afins.
+* **Permissão**: A fim de determinar quem pode fazer qual requisição nas lixeiras, definimos dois tipos de permissão: `Morador`,
+    e `Funcionario`, para poder controlar o recolhimento, manutenção, requisições e afins.
     
-* Usuário: Para cadastro de usuário, decidimos optar pelo simples, utilizando apenas email, nome e senha para cadastro,
-    e então atribuimos uma id ao usuário(id_usuario), assim como a sua permissao(id_permissao).
+* **Usuário**: Para cadastro de usuário, decidimos optar pelo simples, utilizando apenas email, nome e senha para cadastro,
+    e então atribuimos uma id ao usuário(id_usuario), assim como a sua permissao`(id_permissao)`.
     
-* Lixeira: Para a lixeira, alem de darmos uma identificação com serial para ela, damos um nome, para facilitar a sua
+* **Lixeira**: Para a lixeira, alem de darmos uma identificação com serial para ela, damos um nome, para facilitar a sua
     localização no determinado setor, e sua localização com latitude/longitude.
 
-* Manutenção: Para a questão da manutenção, a gente decidiu manter data e hora separadas, em vez de fazer a utilização de um
-    'datetime' ou 'timestamp', por crer que pode vir a causar uma melhor organização da manutenção que virá a ocorrer
+* **Manutenção**: Para a questão da manutenção, a gente decidiu manter data e hora separadas, em vez de fazer a utilização de um
+    `datetime` ou `timestamp`, por crer que pode vir a causar uma melhor organização da manutenção que virá a ocorrer
     nas determinadas lixeiras. Além disso, é armazenada uma id da manutenção, para caso haja necessidade de protocolar as
     manutenções ocorridas, o id do usuário que vai realizar a manutenção, e a lixeira a ser consertada/esvaziada.
         
@@ -97,49 +97,51 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 >## Marco de Entrega 02 em: (30/04/2019)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
-USUARIO: tabela que contém informações sobre o usuário.
-id_usuario: campo que contém identificação do usuário.
-id_permissao: campo que contém identificação da permissão.
- campo que contém o tipo de classificação do usuário (cliente ou funcionário).
-email: campo que contém email do usuário.
-senha: campo que contém a senha do usuário.
-nome: campo que contém o nome do usuário.
+```
+    [USUARIO]: tabela que contém informações sobre o usuário.
+    - id_usuario: campo que contém identificação do usuário.
+    - id_permissao: campo que contém identificação da permissão. Campo que contém o tipo de classificação do usuário  (cliente ou funcionário).
+    - email: campo que contém email do usuário.
+    - senha: campo que contém a senha do usuário.
+    - nome: campo que contém o nome do usuário.
+```
 
-PERMISSAO: tabela que contém informações sobre a permissão dos usuários do aplicativo.
-id_permissao: campo que contém identificação da permissão.
-tipo_permissao: campo que descreve o tipo de classificação do usuário (cliente ou funcionário).
+```
+    [PERMISSAO]: tabela que contém informações sobre a permissão dos usuários do aplicativo.
+    - id_permissao: campo que contém identificação da permissão.
+    - tipo_permissao: campo que descreve o tipo de classificação do usuário (cliente ou funcionário).
+```
 
-LIXEIRA: tabela que contém informação das lixeiras cadastradas no aplicativo.
-id_lixeira: campo que contém identificação da lixeira.
-nome_lixo: campo que contém um “codinome” para a lixeira.
-latitude: campo que contém a latitude da lixeira para localização da mesma.
-longitude: campo que contém longitude para a localização da lixeira.
-id_nv_lixo: campo que contém identificação do nível do lixo.
-id_situacao: campo que contém identificação sobre a situação da lixeira.
+```
+    [LIXEIRA]: tabela que contém informação das lixeiras cadastradas no aplicativo.
+    id_lixeira: campo que contém identificação da lixeira.
+    nome_lixo: campo que contém um “codinome” para a lixeira.
+    latitude: campo que contém a latitude da lixeira para localização da mesma.
+    longitude: campo que contém longitude para a localização da lixeira.
+    id_nv_lixo: campo que contém identificação do nível do lixo.
+    id_situacao: campo que contém identificação sobre a situação da lixeira.
+```
 
-SITUACAO: tabela que contém informações sobre a situação em que se encontra a lixeira.
-id_situacao: campo que contém identificação sobre a situação da lixeira.
-tipo_situacao: campo que contém o estado da lixeira. como se está apta para uso ou em manutenção ou desativada por exemplo.
+```
+    [SITUACAO]: tabela que contém informações sobre a situação em que se encontra a lixeira.
+    - id_situacao: campo que contém identificação sobre a situação da lixeira.
+    - tipo_situacao: campo que contém o estado da lixeira. como se está apta para uso ou em manutenção ou desativada por exemplo.
+```
 
-NV_LIXO: tabela que contém informações sobre o nível e tipo do lixo na lixeira:
-id_nv_lixo: campo que contém identificação do nível do lixo.
-tipo_nv_lixo: campo que contém informação sobre o nível de preenchimento da lixeira (vazio,meio vazio, meio, meio cheio, cheio).
+```
+    [NV_LIXO]: tabela que contém informações sobre o nível e tipo do lixo na lixeira:
+    - id_nv_lixo: campo que contém identificação do nível do lixo.
+    - tipo_nv_lixo: campo que contém informação sobre o nível de preenchimento da lixeira (vazio,meio vazio, meio, meio cheio, cheio).
+```
 
-
-MANUTENCAO: tabela que contém informação sobre a manutenção que foi executada ou solicitada pelo usuário.
-id_manutencao: campo que contém a identificação da manutenção.
-id_lixeira: campo que contém a identificação da lixeira que está sendo realizada a manutenção.
-data: campo que contém data que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
-hora: campo que contém hora que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
-descricao: campo que contém a descrição da manutenção ou do pedido ou da atividade 
- 
-
- [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
+```
+    [MANUTENCAO]: tabela que contém informação sobre a manutenção que foi executada ou solicitada pelo usuário.
+    - id_manutencao: campo que contém a identificação da manutenção.
+    - id_lixeira: campo que contém a identificação da lixeira que está sendo realizada a manutenção.
+    - data: campo que contém data que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
+    - hora: campo que contém hora que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda - quando foi executada. 
+    - descricao: campo que contém a descrição da manutenção ou do pedido ou da atividade 
+```
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
