@@ -97,7 +97,44 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 >## Marco de Entrega 02 em: (30/04/2019)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
+USUARIO: tabela que contém informações sobre o usuário.
+id_usuario: campo que contém identificação do usuário.
+id_permissao: campo que contém identificação da permissão.
+ campo que contém o tipo de classificação do usuário (cliente ou funcionário).
+email: campo que contém email do usuário.
+senha: campo que contém a senha do usuário.
+nome: campo que contém o nome do usuário.
+
+PERMISSAO: tabela que contém informações sobre a permissão dos usuários do aplicativo.
+id_permissao: campo que contém identificação da permissão.
+tipo_permissao: campo que descreve o tipo de classificação do usuário (cliente ou funcionário).
+
+LIXEIRA: tabela que contém informação das lixeiras cadastradas no aplicativo.
+id_lixeira: campo que contém identificação da lixeira.
+nome_lixo: campo que contém um “codinome” para a lixeira.
+latitude: campo que contém a latitude da lixeira para localização da mesma.
+longitude: campo que contém longitude para a localização da lixeira.
+id_nv_lixo: campo que contém identificação do nível do lixo.
+id_situacao: campo que contém identificação sobre a situação da lixeira.
+
+SITUACAO: tabela que contém informações sobre a situação em que se encontra a lixeira.
+id_situacao: campo que contém identificação sobre a situação da lixeira.
+tipo_situacao: campo que contém o estado da lixeira. como se está apta para uso ou em manutenção ou desativada por exemplo.
+
+NV_LIXO: tabela que contém informações sobre o nível e tipo do lixo na lixeira:
+id_nv_lixo: campo que contém identificação do nível do lixo.
+tipo_nv_lixo: campo que contém informação sobre o nível de preenchimento da lixeira (vazio,meio vazio, meio, meio cheio, cheio).
+
+
+MANUTENCAO: tabela que contém informação sobre a manutenção que foi executada ou solicitada pelo usuário.
+id_manutencao: campo que contém a identificação da manutenção.
+id_lixeira: campo que contém a identificação da lixeira que está sendo realizada a manutenção.
+data: campo que contém data que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
+hora: campo que contém hora que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
+descricao: campo que contém a descrição da manutenção ou do pedido ou da atividade 
+ 
+
+ [objeto]: [descrição do objeto]
     
     EXEMPLO:
     CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
