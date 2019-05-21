@@ -114,12 +114,12 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 ```
     [LIXEIRA]: tabela que contém informação das lixeiras cadastradas no aplicativo.
-    id_lixeira: campo que contém identificação da lixeira.
-    nome_lixo: campo que contém um “codinome” para a lixeira.
-    latitude: campo que contém a latitude da lixeira para localização da mesma.
-    longitude: campo que contém longitude para a localização da lixeira.
-    id_nv_lixo: campo que contém identificação do nível do lixo.
-    id_situacao: campo que contém identificação sobre a situação da lixeira.
+    - id_lixeira: campo que contém identificação da lixeira.
+    - nome_lixo: campo que contém um “codinome” para a lixeira.
+    - latitude: campo que contém a latitude da lixeira para localização da mesma.
+    - longitude: campo que contém longitude para a localização da lixeira.
+    - id_nv_lixo: campo que contém identificação do nível do lixo.
+    - id_situacao: campo que contém identificação sobre a situação da lixeira.
 ```
 
 ```
