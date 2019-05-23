@@ -155,13 +155,13 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-    [Inserção das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Insert.sql)<br>
+   [Inserção das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Insert.sql)<br>
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
-    [Criação das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Create_Insert.sql)<br>
+   [Criação das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Create_Insert.sql)<br>
 
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-    [Criação, Inserção e Exclusão das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Drop_Create_Insert.sql)<br>
+   [Criação, Inserção e Exclusão das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Drop_Create_Insert.sql)<br>
 
 #### 8.4 Principais fluxos de informação e principais tabelas do sistema
         a) Quais os principais fluxos de dados de informação no sistema em densenvolvimento (mínimo 3)
