@@ -1,3 +1,4 @@
+/* Create */
 create table usuario (id_usuario int, email varchar(50),senha varchar(20),nome_user varchar(50),id_permissao int, unique(id_usuario));
 create table permissao (id_permissao int, tipo_permissao varchar(30), unique(id_permissao));
 create table manutencao (id_manutencao int, id_lixeira int, data date, hora time, descricao varchar(50), unique(id_manutencao));
@@ -17,6 +18,7 @@ alter table manutencao add foreign key(id_lixeira) references lixeira(id_lixeira
 alter table lixeira add foreign key(id_nv_lixo) references nv_lixo(id_nv_lixo);
 alter table lixeira add foreign key(id_situacao) references situacao(id_situacao);
 
+/* Insert */
 insert into nv_lixo (id_nv_lixo, tipo_nv_lixo) values (0, 'vazio'),(1, 'meio_vazio'),(2, 'meio'),(3, 'meio_cheio'),(4, 'cheio');
 insert into permissao (id_permissao, tipo_permissao) values (0, 'Funcionario'),(1, 'Morador');
 insert into usuario (id_usuario, email, senha, nome_user, id_permissao) values(10,'pedrocruz@test.com', '123456', 'Pedro Cruz', 1), (11,'kazushi@test.com', '123456', 'Kazushi', 1), (12,'brian@test.com', '123456', 'Brian', 0), (13,'marcelo@test.com', '123456', 'Marcelo', 0);

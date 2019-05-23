@@ -1,0 +1,5 @@
+insert into nv_lixo (id_nv_lixo, tipo_nv_lixo) values (0, 'vazio'),(1, 'meio_vazio'),(2, 'meio'),(3, 'meio_cheio'),(4, 'cheio');
+insert into permissao (id_permissao, tipo_permissao) values (0, 'Funcionario'),(1, 'Morador');
+insert into usuario (id_usuario, email, senha, nome_user, id_permissao) values(10,'pedrocruz@test.com', '123456', 'Pedro Cruz', 1), (11,'kazushi@test.com', '123456', 'Kazushi', 1), (12,'brian@test.com', '123456', 'Brian', 0), (13,'marcelo@test.com', '123456', 'Marcelo', 0);
+insert into situacao (id_situacao,tipo_situacao) values(1,'operante'), (0,'inoperante');
+insert into lixeira (id_lixeira, nome_lixo, latitude, longitude, id_nv_lixo, id_situacao) values(1,'Quadra', 123.2312, -123.4232, 1, 1), (2,'Area de Festas', 324.1230, -12.2123, 2, 1), (3,'Piscina', 534.3214, 123.6045, 4, 1);
