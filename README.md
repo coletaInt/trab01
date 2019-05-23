@@ -155,21 +155,14 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico 
-        b) formato .SQL
+    [Inserção das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Insert.sql)<br>
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script 
-        (create para tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+    [Criação das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Create_Insert.sql)<br>
+
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script
-        (Drop para exclusão de tabelas + create para tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+    [Criação, Inserção e Exclusão das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Drop_Create_Insert.sql)<br>
+
 #### 8.4 Principais fluxos de informação e principais tabelas do sistema
         a) Quais os principais fluxos de dados de informação no sistema em densenvolvimento (mínimo 3)
         b) Quais as tabelas que conterão mais dados no sistema em densenvolvimento (mínimo 3)
