@@ -50,7 +50,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
       
-![Modelo_conceitual](https://github.com/coletaInt/trab01/blob/master/applixo_modelo_conceitual_jpg.jpg?raw=true)
+![Modelo_conceitual](https://github.com/coletaInt/trab01/blob/master/conceitual02.jpg?raw=true)
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
