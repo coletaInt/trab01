@@ -162,7 +162,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 
 ### 6	MODELO LÓGICO<br>
-![Modelo_Lógico](https://github.com/coletaInt/trab01/blob/master/modelo_logico.jpg?raw=true)
+![Modelo_Lógico](https://github.com/coletaInt/trab01/blob/master/logico02.jpg?raw=true)
         a) inclusão do modelo lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
