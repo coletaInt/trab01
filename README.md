@@ -199,6 +199,23 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
+    select * from chamado;
+    
+    select * from lixeira;
+
+    select * from manutencao;
+
+    select * from nv_lixo;
+
+    select * from permissao;
+
+    select * from situacao;
+
+    select * from status;
+
+    select * from usuario;
+
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
