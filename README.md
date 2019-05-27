@@ -201,20 +201,30 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
     select * from chamado;
+![SelectChamado](https://github.com/coletaInt/trab01/blob/master/images/selectChamado.png)
     
     select * from lixeira;
+![SelectLixeira](https://github.com/coletaInt/trab01/blob/master/images/selectLixeira.png)
 
     select * from manutencao;
+![SelectManutencao](https://github.com/coletaInt/trab01/blob/master/images/selectManutencao.png)
 
     select * from nv_lixo;
+![SelectNv_Lixo](https://github.com/coletaInt/trab01/blob/master/images/selectNv_lixo.png)
 
     select * from permissao;
+![SelectPermissao](https://github.com/coletaInt/trab01/blob/master/images/selectPermissao.png)
 
     select * from situacao;
+![SelectSituacao](https://github.com/coletaInt/trab01/blob/master/images/selectSituacao.png)
 
     select * from status;
+![SelectStatus](https://github.com/coletaInt/trab01/blob/master/images/selectStatus.png)
 
     select * from usuario;
+![SelectUsuario](https://github.com/coletaInt/trab01/blob/master/images/selectUsuario.png)
+
+
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
