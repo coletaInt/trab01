@@ -162,9 +162,20 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
    [Criação, Inserção e Exclusão das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Drop_Create_Insert.sql)<br>
 
 #### 8.4 Principais fluxos de informação e principais tabelas do sistema
-        a) Quais os principais fluxos de dados de informação no sistema em densenvolvimento (mínimo 3)
-        b) Quais as tabelas que conterão mais dados no sistema em densenvolvimento (mínimo 3)
-        c) informe quais as 5 principais tabelas do sistema em densenvolvimento.
+    ##### Os principais fluxos de dados de informação no sistema em desenvolvimento
+    - Nv_Lixo (Nível da porcentagem de lixo presente nas lixeiras, alimentada pelos usuários)
+    - Situacao (Status da condição de uso das lixeiras, alimentada pelos usuários)
+    - Lixeira (Nível da porcentagem de lixo atual na lixeira, alimentada pela porcentagem de lixo no descarte e na coleta)
+    ##### As tabelas que conterão mais dados no sistema em desenvolvimento
+    - Nv_Lixo
+    - Lixeira
+    - Usuario
+    ##### As 5 principais tabelas do sistema em desenvolvimento
+    - Lixeira
+    - Nv_Lixo
+    - Usuario
+    - Manutencao
+    - Situacao
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
