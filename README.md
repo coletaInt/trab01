@@ -150,9 +150,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
-        
+[Instruções de Criacão Modelo Físico](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Modelo_Fisico.sql)<br>        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
    [Inserção das tabelas](https://github.com/coletaInt/trab01/blob/master/arquivos/TrashMeBD_Insert.sql)<br>
