@@ -227,6 +227,29 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+
+    select * from lixeira
+    where id_situacao = 1;
+
+![selectLixeiraWhere](https://github.com/coletaInt/trab01/blob/master/images/selectLixeiraWhere.png)
+
+    select * from permissao
+    where id_permissao = 0;
+
+![selectPermissaoWhere](https://github.com/coletaInt/trab01/blob/master/images/selectPermissaoWhere.png)
+
+    select * from nv_lixo
+    where id_nv_lixo >= 2;
+
+![selectNvLixoWhere](https://github.com/coletaInt/trab01/blob/master/images/selectNvLixoWhere.png)
+   
+    select * from usuario
+    where id_permissao = 1;
+
+![selectPermissaoWhere](https://github.com/coletaInt/trab01/blob/master/images/selectPermissaoWhere.png)
+
+
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
