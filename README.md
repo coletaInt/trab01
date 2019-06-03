@@ -246,7 +246,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     select * from usuario
     where id_permissao = 1;
 
-![selectPermissaoWhere](https://github.com/coletaInt/trab01/blob/master/images/selectPermissaoWhere.png)
+![selectUsuarioWhere](https://github.com/coletaInt/trab01/blob/master/images/selectUsuarioWhere.png)
 
 
 
