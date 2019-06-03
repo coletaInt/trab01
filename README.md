@@ -252,8 +252,37 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
+    
+    select * from usuario
+    where id_permissao = 1 and id_usuario > 11;
+    
+    select * from nv_lixo
+    where id_nv_lixo > 2 OR id_nv_lixo < 2;
+    
+    select * from lixeira
+    where id_situacao is not null;
+    
+    select * from lixeira
+    where id_nv_lixo <1 or id_nv_lixo >3;
+    
+    select * from lixeira
+    where id_lixeira > 5 and id_situacao = 0;
+    
     b) Criar no mínimo 3 consultas com operadores aritméticos 
+    
+    select * from nv_lixo
+    where id_nv_lixo > 2;
+    
+    select * from usuario
+    where id_permissao = 0;
+    
+    select * from lixeira
+    where id_lixeira < 6;
+    
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    
+    
+    
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
