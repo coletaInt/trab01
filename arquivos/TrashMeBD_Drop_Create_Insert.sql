@@ -1,83 +1,106 @@
 /* DROP */
 DROP TABLE IF EXISTS usuario CASCADE;
 DROP TABLE IF EXISTS lixeira CASCADE;
-DROP TABLE IF EXISTS manutencao CASCADE;
 DROP TABLE IF EXISTS nv_lixo CASCADE;
 DROP TABLE IF EXISTS permissao CASCADE;
 DROP TABLE IF EXISTS situacao CASCADE;
 DROP TABLE IF EXISTS chamado CASCADE;
 DROP TABLE IF EXISTS status CASCADE;
+DROP TABLE IF EXISTS manutencao_chamado cascade;
+DROP TABLE IF EXISTS executa CASCADE;
 
 /* Create */
-create table usuario (
-	id_usuario int,
-	email varchar(50),
-	senha varchar(20),
-	nome_user varchar(50),
-	id_permissao int,
-	unique(id_usuario)
-);
-create table permissao (
-	id_permissao int,
-	tipo_permissao varchar(30),
-	unique(id_permissao)
-);
-create table manutencao (
-	id_manutencao int,
-	id_lixeira int,
-	data date,
-	hora time,
-	descricao varchar(50),
-	unique(id_manutencao)
-);
-create table lixeira (
-	id_lixeira int,
-	id_situacao int,
-	id_nv_lixo int,
-	nome_lixo varchar(20),
-	latitude float,
-	longitude float,
-	unique(id_lixeira)
-);
-create table nv_lixo (
-	id_nv_lixo int,
-	tipo_nv_lixo varchar(20),
-	unique(id_nv_lixo)
-);
-create table situacao (
-	id_situacao int,
-	tipo_situacao varchar(20),
-	unique(id_situacao)
-);
-create table status (
-	id_status int,
-	id_manutencao int,
-	tipo_status varchar(20),
-	unique(id_status)
-);
-create table chamado (
-	id_chamado int,
-	id_usuario int,
-	data date,
-	hora time,
-	unique(id_chamado)
+CREATE TABLE USUARIO (
+    id_usuario int PRIMARY KEY,
+    email varchar(30),
+    senha varchar(50),
+    nome varchar(30),
+    FK_PERMISSAO_id_permissao int
 );
 
-alter table usuario add primary key(id_usuario);
-alter table permissao add primary key(id_permissao);
-alter table lixeira add primary key(id_lixeira);
-alter table manutencao add primary key(id_manutencao);
-alter table nv_lixo add primary key(id_nv_lixo);
-alter table situacao add primary key(id_situacao);
-alter table chamado add primary key(id_chamado);
-alter table status add primary key(id_status);
+CREATE TABLE PERMISSAO (
+    id_permissao int PRIMARY KEY,
+    tipo_permissao varchar(30)
+);
 
-alter table usuario add foreign key(id_permissao) references permissao(id_permissao);
-alter table manutencao add foreign key(id_lixeira) references lixeira(id_lixeira);
-alter table lixeira add foreign key(id_nv_lixo) references nv_lixo(id_nv_lixo);
-alter table lixeira add foreign key(id_situacao) references situacao(id_situacao);
-alter table chamado add foreign key(id_usuario) references usuario(id_usuario);
-alter table status add foreign key(id_manutencao) references manutencao(id_manutencao);
+CREATE TABLE LIXEIRA (
+    id_lixeira int PRIMARY KEY,
+    nome_lixo varchar(50),
+    latitude float,
+    longitude float,
+    FK_SITUACAO_id_situacao int,
+    FK_NV_LIXO_id_nv_lixo int
+);
+
+CREATE TABLE NV_LIXO (
+    id_nv_lixo int PRIMARY KEY,
+    tipo_nv_lixo varchar(30)
+);
+
+CREATE TABLE SITUACAO (
+    id_situacao int PRIMARY KEY,
+    tipo_situacao varchar(30)
+);
+
+CREATE TABLE MANUTENCAO_CHAMADO (
+    id_manutencao int PRIMARY KEY,
+    data date,
+    hora time,
+    FK_LIXEIRA_id_lixeira int,
+    descricao varchar(50),
+    FK_USUARIO_id_usuario int,
+    FK_STATUS_id_status int
+);
+
+CREATE TABLE STATUS (
+    id_status int PRIMARY KEY,
+    tipo_status varchar(30)
+);
+
+CREATE TABLE Executa (
+    fk_MANUTENCAO_CHAMADO_id_manutencao int,
+    fk_USUARIO_id_usuario int,
+    data date,
+    hora time
+);
+ 
+ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
+    FOREIGN KEY (FK_PERMISSAO_id_permissao)
+    REFERENCES PERMISSAO (id_permissao)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE LIXEIRA ADD CONSTRAINT FK_LIXEIRA_2
+    FOREIGN KEY (FK_SITUACAO_id_situacao)
+    REFERENCES SITUACAO (id_situacao)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE LIXEIRA ADD CONSTRAINT FK_LIXEIRA_3
+    FOREIGN KEY (FK_NV_LIXO_id_nv_lixo)
+    REFERENCES NV_LIXO (id_nv_lixo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE MANUTENCAO_CHAMADO ADD CONSTRAINT FK_MANUTENCAO_CHAMADO_2
+    FOREIGN KEY (FK_LIXEIRA_id_lixeira)
+    REFERENCES LIXEIRA (id_lixeira)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE MANUTENCAO_CHAMADO ADD CONSTRAINT FK_MANUTENCAO_CHAMADO_3
+    FOREIGN KEY (FK_USUARIO_id_usuario)
+    REFERENCES USUARIO (id_usuario);
+ 
+ALTER TABLE MANUTENCAO_CHAMADO ADD CONSTRAINT FK_MANUTENCAO_CHAMADO_4
+    FOREIGN KEY (FK_STATUS_id_status)
+    REFERENCES STATUS (id_status);
+ 
+ALTER TABLE Executa ADD CONSTRAINT FK_Executa_1
+    FOREIGN KEY (fk_MANUTENCAO_CHAMADO_id_manutencao)
+    REFERENCES MANUTENCAO_CHAMADO (id_manutencao)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Executa ADD CONSTRAINT FK_Executa_2
+    FOREIGN KEY (fk_USUARIO_id_usuario)
+    REFERENCES USUARIO (id_usuario)
+    ON DELETE SET NULL;
 
 /* Insert */
 insert into nv_lixo (id_nv_lixo, tipo_nv_lixo) values 
@@ -91,79 +114,91 @@ insert into permissao (id_permissao, tipo_permissao) values
 	(0, 'Funcionario'),
 	(1, 'Morador');
 
-insert into usuario (id_usuario, email, senha, nome_user, id_permissao) values
-	(10,'pedrocruz@test.com', MD5('13456'), 'Pedro Cruz', 1),
-	(11,'kazushi@test.com', MD5('156456'), 'Kazushi', 1),
+insert into usuario (id_usuario, email, senha, nome, FK_PERMISSAO_id_permissao) values
+	(10,'pedrocruz@test.com', MD5('13456'), 'Pedro Cruz', 0),
+	(11,'kazushi@test.com', MD5('156456'), 'Kazushi', 0),
 	(12,'brian@test.com', MD5('175460'), 'Brian', 0),
 	(13,'marcelo@test.com', MD5('198556'), 'Marcelo', 0),
-	(14,'jose@test.com', MD5('198436'), 'Jose', 0),
+	(14,'jose@test.com', MD5('198436'), 'Jose', 1),
 	(15,'manoel@test.com', MD5('162342'), 'Manoel', 1),
-	(16,'julia@test.com', MD5('105834'), 'Julia', 0),
-	(17,'thiago@test.com', MD5('133245'), 'Thiago', 1),
-	(18,'maria@test.com', MD5('193472'), 'Maria', 0);
+	(16,'julia@test.com', MD5('105834'), 'Julia', 1),
+	(17,'thiago@test.com', MD5('133245'), 'Thiago', 0),
+	(18,'maria@test.com', MD5('193472'), 'Maria', 1),
+	(19,'lucas@test.com', MD5('543253'), 'Lucas', 1),
+	(20,'guilher@test.com', MD5('234123'), 'Guilherme', 1),
+	(21,'jorge@test.com', MD5('765342'), 'Jorge', 1),
+	(22,'ana@test.com', MD5('567234'), 'Ana', 0),
+	(23,'miguel@test.com', MD5('935244'), 'Miguel', 1),
+	(24,'moises@test.com', MD5('748345'), 'Moises', 1),
+	(25,'rafael@test.com', MD5('345642'), 'Rafael', 0),
+	(26,'ramon@test.com', MD5('854765'), 'Ramon', 1),
+	(27,'felipe@test.com', MD5('987508'), 'Felipe', 1),
+	(28,'renato@test.com', MD5('980754'), 'Renato', 1),
+	(29,'ricardo@test.com', MD5('097897'), 'Ricardo', 0),
+	(30,'vinicius@test.com', MD5('479334'), 'Vinicius', 1);
 
 insert into situacao (id_situacao,tipo_situacao) values
 	(1,'operante'),
 	(0,'inoperante');
 
-insert into lixeira (id_lixeira, nome_lixo, latitude, longitude, id_nv_lixo, id_situacao) values
-	(1,'Quadra', 123.2312, -123.4232, 1, 1),
-	(2,'Area de Festas', 324.1230, -12.2123, 2, 1),
-	(3,'Piscina', 534.3214, 123.6045, 4, 1),
-	(4,'Salão de Festas', 353.3544, 13.6045, 2, 1),
-	(5,'Salão de Festas 3', 584.3214, 163.6045, 3, 1),
-	(6,'Garagem', 114.3214, 23.6045, 0, 1),
-	(7,'Garagem 2', 34.3214, 123.6045, 4, 0),
-	(8,'Garagem 3', 57.3214, 98.6045, 1, 1),
-	(9,'Garagem 4', 66.3214, 47.6045, 1, 1),
-	(10,'Playground', 77.3214, 83.6045, 3, 1),
-  (11,'Condominio 1', 77.3214, 83.6045, 3, 1),
-  (12,'Condominio 2', 77.3214, 83.6045, 3, 1),
-  (13,'Churrasqueira 1', 77.3214, 83.6045, 3, 1),
-  (14,'Churrasqueira 2', 77.3214, 83.6045, 3, 1),
-  (15,'Churrasqueira 3', 77.3214, 83.6045, 3, 1),
-  (16,'Churrasqueira 4', 77.3214, 83.6045, 3, 1),
-  (17,'Área comum', 77.3214, 83.6045, 3, 1),
-  (18,'Jardim', 77.3214, 83.6045, 3, 1),
-  (19,'Jardim 2', 77.3214, 83.6045, 3, 1),
-  (20,'Bosque', 77.3214, 83.6045, 3, 1),
-	(21,'Salão de Festas 2', 334.3214, 113.6045, 4, 0);
+insert into lixeira (id_lixeira, nome_lixo, latitude, longitude, FK_SITUACAO_id_situacao, FK_NV_LIXO_id_nv_lixo) values
+	(1,'Quadra', 123.2312, -123.4232, 0, 0),
+	(2,'Area de Festas', 324.1230, -12.2123, 0, 0),
+	(3,'Piscina', 534.3214, 123.6045, 0, 0),
+	(4,'Salão de Festas', 353.3544, 13.6045, 0, 0),
+	(5,'Salão de Festas 3', 584.3214, 163.6045, 0, 0),
+	(6,'Garagem', 114.3214, 23.6045, 0, 0),
+	(7,'Garagem 2', 34.3214, 123.6045, 0, 0),
+	(8,'Garagem 3', 57.3214, 98.6045, 0, 0),
+	(9,'Garagem 4', 66.3214, 47.6045, 0, 0),
+	(10,'Playground', 77.3214, 83.6045, 0, 0),
+	(11,'Condominio 1', 77.3214, 83.6045, 0, 0),
+	(12,'Condominio 2', 77.3214, 83.6045, 1, 2),
+	(13,'Churrasqueira 1', 77.3214, 83.6045, 1, 1),
+	(14,'Churrasqueira 2', 77.3214, 83.6045, 1, 4),
+	(15,'Churrasqueira 3', 77.3214, 83.6045, 1, 3),
+	(16,'Churrasqueira 4', 77.3214, 83.6045, 1, 3),
+	(17,'Área comum', 77.3214, 83.6045, 1, 3),
+	(18,'Jardim', 77.3214, 83.6045, 1, 2),
+	(19,'Jardim 2', 77.3214, 83.6045, 1, 4),
+	(20,'Bosque', 77.3214, 83.6045, 1, 1),
+	(21,'Salão de Festas 2', 334.3214, 113.6045, 1, 2);
 
-insert into manutencao (id_manutencao, id_lixeira, data, hora, descricao) values
-  (154, 1, '2019-12-10', '10:02:10', 'lixeira com defeito no sensor'),
-  (454, 2, '2018/03/20', '10:22:00', 'lixeira quebrada'),
-  (399, 3, '2017/05/15', '10:32:00', 'lixeira pingando gordura'),
-  (455, 4, '2019/06/22', '10:52:02', 'lixeira fora lugar'),
-  (121, 5, '1998/09/19', '10:42:06', 'lixeira emperrada'),
-  (555, 6, '2017/10/26', '10:59:08', 'sensor da lixeira travando'),
-  (635, 7, '2016/01/24', '09:06:10', 'lixeira suja'),
-  (74256, 8, '2016/03/05', '12:13:12', 'lixeira com fezes'),
-  (788, 11, '2014/02/15', '09:10:55', 'lixeira vandalizada'),
-  (9555, 9, '2015/09/27', '10:20:59', 'sensor queimado'),
-  (1000, 10, '1998/09/20', '11:09:58', 'lixeira desaparecida');
+insert into status (id_status, tipo_status) values
+	(645, 'em progresso' ),
+	(164, 'em progresso' ),
+	(849, 'em progresso' ),
+	(565, 'em progresso' ),
+	(211, 'concluido' ),
+	(255, 'concluido' ),
+	(321, 'concluido' ),
+	(743, 'concluido' ),
+	(627, 'concluido'),
+	(465, 'concluido'),
+	(110, 'concluido');
 
-insert into chamado (id_chamado, id_usuario, data, hora) values
-  (164,10, '2018-11-11', '11:02:10' ),
-  (414,12, '2017/02/09', '12:22:00' ),
-  (389,13, '2016/06/14', '13:32:00' ),
-  (465,14, '2018/07/23', '14:52:02' ),
-  (121,15, '1997/05/14', '15:42:06' ),
-  (555,16, '2016/03/24', '16:59:08' ),
-  (631,11, '2015/02/21', '07:06:12' ),
-  (74357,10, '2015/06/07', '18:13:12' ),
-  (787,12, '2013/05/09', '19:10:55'),
-  (9565,12, '2014/07/02', '20:20:59'),
-  (10010,10, '1997/07/07', '21:09:58');
+insert into manutencao_chamado (id_manutencao, fk_lixeira_id_lixeira, data, hora, descricao, fk_USUARIO_id_usuario, FK_STATUS_id_status) values
+	(154, 1, '2019-12-10', '10:02:10', 'lixeira com defeito no sensor', 12, 645),
+	(454, 2, '2018/03/20', '10:22:00', 'lixeira quebrada', 10, 211),
+	(399, 3, '2017/05/15', '10:32:00', 'lixeira pingando gordura', 11, 255),
+	(455, 4, '2019/06/22', '10:52:02', 'lixeira fora lugar', 25, 849),
+	(121, 5, '2016/09/19', '10:42:06', 'lixeira emperrada', 22, 164),
+	(555, 6, '2019/10/26', '10:59:08', 'sensor da lixeira travando', 13, 565),
+	(635, 7, '2016/01/24', '09:06:10', 'lixeira suja', 29, 321),
+	(74256, 8, '2016/03/05', '12:13:12', 'lixeira com fezes', 17, 743),
+	(9555, 9, '2015/09/27', '10:20:59', 'sensor queimado', 11, 627),
+	(1000, 10, '2012/09/20', '11:09:58', 'lixeira desaparecida', 12, 465),
+	(788, 11, '2014/02/15', '09:10:55', 'lixeira vandalizada', 10, 110);
 
-insert into status (id_status, id_manutencao, tipo_status) values
-  (1645,154, 'em progresso' ),
-  (4164,454, 'em progresso' ),
-  (3849,399, 'em progresso' ),
-  (4565,455, 'em progresso' ),
-  (1211,121, 'concluido' ),
-  (5255,555, 'concluido' ),
-  (6321,635, 'concluido' ),
-  (7433257,154, 'concluido' ),
-  (78627,454, 'concluido'),
-  (95465,399, 'concluido'),
-  (103010,455, 'concluido');
+insert into executa (fk_MANUTENCAO_CHAMADO_id_manutencao, fk_USUARIO_id_usuario, data, hora) VALUES
+	(154, 12, '2019-12-10', '10:02:10'),
+	(454, 10, '2018/03/20', '10:22:00'),
+	(399, 11, '2017/05/15', '10:32:00'),
+	(455, 25, '2019/06/22', '10:52:02'),
+	(121, 22, '2016/09/19', '10:42:06'),
+	(555, 13, '2019/10/26', '10:59:08'),
+	(635, 29, '2016/01/24', '09:06:10'),
+	(74256, 17, '2016/03/05', '12:13:12'),
+	(9555, 11, '2015/09/27', '10:20:59'),
+	(1000, 12, '2012/09/20', '11:09:58'),
+	(788, 10, '2014/02/15', '09:10:55');
