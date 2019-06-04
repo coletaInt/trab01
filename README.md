@@ -50,7 +50,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
       
-![Modelo_conceitual](https://github.com/coletaInt/trab01/blob/master/modelo_conceitual04.png?raw=true)
+![Modelo_conceitual](https://github.com/coletaInt/trab01/blob/master/conceitual03.jpg?raw=true)
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
@@ -162,7 +162,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 
 ### 6	MODELO LÓGICO<br>
-![Modelo_Lógico](https://github.com/coletaInt/trab01/blob/master/L%C3%B3gico04.png?raw=true)
+![Modelo_Lógico](https://github.com/coletaInt/trab01/blob/master/logico03.jpg?raw=true)
         a) inclusão do modelo lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
@@ -313,17 +313,36 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
     select * from nv_lixo
     where tipo_nv_lixo ilike 'M%';
-![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)  
+![9.4A-3](https://github.com/coletaInt/trab01/blob/master/images/9.4A-4.png)  
 
     select * from manutencao
     where descricao like 'lix%';
-![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)
+![9.4A-4](https://github.com/coletaInt/trab01/blob/master/images/9.4A-5.png)
 
     select * from situacao
     where tipo_situacao ilike 'operante';
-![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)   
+![9.4A-5](https://github.com/coletaInt/trab01/blob/master/images/9.4A-6.png)   
 
     b) Criar uma consulta para cada tipo de função data apresentada.
+    select id_usuario,
+    current_date as data_atual,
+    data,
+    (age(current_date, data))
+    from chamado;
+![9.4B-1](https://github.com/coletaInt/trab01/blob/master/images/9.4B-1.png)    
+
+    select descricao,
+    current_date as data_atual,
+    data,
+    date_part('year', (age(current_date, data))) as idade
+    from manutencao;
+![9.4B-2](https://github.com/coletaInt/trab01/blob/master/images/9.4B-2.png)   
+
+    select descricao,
+    current_date as data_atual,
+    extract('year' from data)
+    from manutencao;
+![9.4B-3](https://github.com/coletaInt/trab01/blob/master/images/9.4B-3.png)       
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 
