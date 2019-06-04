@@ -255,42 +255,51 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     
     select * from usuario
     where id_permissao = 1 and id_usuario > 11;
+![9.3A-1](https://github.com/coletaInt/trab01/blob/master/images/9.3-1.png)    
     
     select * from nv_lixo
     where id_nv_lixo > 2 OR id_nv_lixo < 2;
+![9.3A-2](https://github.com/coletaInt/trab01/blob/master/images/9.3-2.png)      
     
     select * from lixeira
     where id_situacao is not null;
-    
+![9.3A-3](https://github.com/coletaInt/trab01/blob/master/images/9.3-3.png)  
+
     select * from lixeira
     where id_nv_lixo <1 or id_nv_lixo >3;
+![9.3A-4](https://github.com/coletaInt/trab01/blob/master/images/9.3-4.png)      
     
     select * from lixeira
     where id_lixeira > 5 and id_situacao = 0;
+![9.3A-5](https://github.com/coletaInt/trab01/blob/master/images/9.3-5.png)      
     
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     
     select * from nv_lixo
     where id_nv_lixo > 2;
+![9.3B-1](https://github.com/coletaInt/trab01/blob/master/images/9.3B-1.png)    
     
     select * from usuario
     where id_permissao = 0;
-    
+![9.3B-2](https://github.com/coletaInt/trab01/blob/master/images/9.3B-2.png) 
+
     select * from lixeira
     where id_lixeira < 6;
-    
+![9.3B-3](https://github.com/coletaInt/trab01/blob/master/images/9.3B-3.png) 
+
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
     
     alter table lixeira
     rename column nome_lixo to nome_lixoso;
-    
+![9.3C-1](https://github.com/coletaInt/trab01/blob/master/images/9.3C-1.png)    
     
     alter table usuario
     rename column senha to pswrd;
-    
+![9.3C-2](https://github.com/coletaInt/trab01/blob/master/images/9.3C-2.png)     
     
     alter table status
     rename column tipo_status to desc_status;
+![9.3C-3](https://github.com/coletaInt/trab01/blob/master/images/9.3C-3.png) 
     
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
