@@ -281,7 +281,16 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
     
+    alter table lixeira
+    rename column nome_lixo to nome_lixoso;
     
+    
+    alter table usuario
+    rename column senha to pswrd;
+    
+    
+    alter table status
+    rename column tipo_status to desc_status;
     
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
