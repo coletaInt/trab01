@@ -144,3 +144,16 @@ insert into chamado (id_chamado, id_usuario, data, hora) values
   (787,12, '2013/05/09', '19:10:55'),
   (9565,12, '2014/07/02', '20:20:59'),
   (10010,10, '1997/07/07', '21:09:58');
+
+insert into status (id_status, id_manutencao, tipo_status) values
+  (1645,154, 'em progresso' ),
+  (4164,454, 'em progresso' ),
+  (3849,399, 'em progresso' ),
+  (4565,455, 'em progresso' ),
+  (1211,121, 'concluido' ),
+  (5255,555, 'concluido' ),
+  (6321,635, 'concluido' ),
+  (7433257,154, 'concluido' ),
+  (78627,454, 'concluido'),
+  (95465,399, 'concluido'),
+  (103010,455, 'concluido');
