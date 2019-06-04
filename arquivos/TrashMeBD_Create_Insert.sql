@@ -108,3 +108,16 @@ insert into lixeira (id_lixeira, nome_lixo, latitude, longitude, id_nv_lixo, id_
 	(8,'Garagem 3', 57.3214, 98.6045, 1, 1),
 	(9,'Garagem 4', 66.3214, 47.6045, 1, 1),
 	(10,'Playground', 77.3214, 83.6045, 3, 1);
+
+insert into manutencao (id_manutencao, id_lixeira, data, hora, descricao) values
+  (154, 1, '2019-12-10', '10:02:10', 'lixeira com defeito no sensor'),
+  (454, 2, '2018/03/20', '10:22:00', 'lixeira quebrada'),
+  (399, 3, '2017/05/15', '10:32:00', 'lixeira pingando gordura'),
+  (455, 4, '2019/06/22', '10:52:02', 'lixeira fora lugar'),
+  (121, 5, '1998/09/19', '10:42:06', 'lixeira emperrada'),
+  (555, 6, '2017/10/26', '10:59:08', 'sensor da lixeira travando'),
+  (635, 7, '2016/01/24', '09:06:10', 'lixeira suja'),
+  (74256, 8, '2016/03/05', '12:13:12', 'lixeira com fezes'),
+  (788, 11, '2014/02/15', '09:10:55', 'lixeira vandalizada'),
+  (9555, 9, '2015/09/27', '10:20:59', 'sensor queimado'),
+  (1000, 10, '1998/09/20', '11:09:58', 'lixeira desaparecida');
