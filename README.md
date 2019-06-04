@@ -303,6 +303,26 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
+    select * from lixeira
+    where nome_lixo like 'G%';
+![9.4A-1](https://github.com/coletaInt/trab01/blob/master/images/9.4A-1.png)
+
+    select * from usuario
+    where nome_user ilike 'B%';
+![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)    
+
+    select * from nv_lixo
+    where tipo_nv_lixo ilike 'M%';
+![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)  
+
+    select * from manutencao
+    where descricao like 'lix%';
+![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)
+
+    select * from situacao
+    where tipo_situacao ilike 'operante';
+![9.4A-2](https://github.com/coletaInt/trab01/blob/master/images/9.4A-2.png)   
+
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
