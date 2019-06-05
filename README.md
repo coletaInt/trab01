@@ -203,8 +203,11 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     select * from lixeira;
 ![SelectLixeira](https://github.com/coletaInt/trab01/blob/master/images/selectLixeira.png)
 
-    select * from manutencao_chamado;
+    select * from manutencao;
 ![SelectManutencao](https://github.com/coletaInt/trab01/blob/master/images/selectManutencao.png)
+
+    select * from manutencao_chamado;
+![SelectManutencao_Chamado](https://github.com/coletaInt/trab01/blob/master/images/selectManutencao_Chamado.png)
 
     select * from nv_lixo;
 ![SelectNv_Lixo](https://github.com/coletaInt/trab01/blob/master/images/selectNv_lixo.png)
