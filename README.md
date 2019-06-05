@@ -40,7 +40,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     e deve ser criada antes do modelo conceitual
     c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+[Tabela de Dados - TrashMe](https://github.com/coletaInt/trab01/blob/master/app_lixo.xlsx?raw=true "Tabela de Dados - TrashMe")
     
 >## Marco de Entrega 01 em: (06/09/2018)<br>
 

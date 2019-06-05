@@ -165,30 +165,22 @@ insert into lixeira (id_lixeira, nome_lixo, latitude, longitude, FK_SITUACAO_id_
 	(21,'Salão de Festas 2', 334.3214, 113.6045, 1, 2);
 
 insert into status (id_status, tipo_status) values
-	(645, 'em progresso' ),
-	(164, 'em progresso' ),
-	(849, 'em progresso' ),
-	(565, 'em progresso' ),
-	(211, 'concluido' ),
-	(255, 'concluido' ),
-	(321, 'concluido' ),
-	(743, 'concluido' ),
-	(627, 'concluido'),
-	(465, 'concluido'),
-	(110, 'concluido');
+	(0, 'Em aberto' ),
+	(1, 'Em progresso' ),
+	(2, 'Finalizado' );
 
 insert into manutencao_chamado (id_manutencao, fk_lixeira_id_lixeira, data, hora, descricao, fk_USUARIO_id_usuario, FK_STATUS_id_status) values
-	(154, 1, '2019-12-10', '10:02:10', 'lixeira com defeito no sensor', 12, 645),
-	(454, 2, '2018/03/20', '10:22:00', 'lixeira quebrada', 10, 211),
-	(399, 3, '2017/05/15', '10:32:00', 'lixeira pingando gordura', 11, 255),
-	(455, 4, '2019/06/22', '10:52:02', 'lixeira fora lugar', 25, 849),
-	(121, 5, '2016/09/19', '10:42:06', 'lixeira emperrada', 22, 164),
-	(555, 6, '2019/10/26', '10:59:08', 'sensor da lixeira travando', 13, 565),
-	(635, 7, '2016/01/24', '09:06:10', 'lixeira suja', 29, 321),
-	(74256, 8, '2016/03/05', '12:13:12', 'lixeira com fezes', 17, 743),
-	(9555, 9, '2015/09/27', '10:20:59', 'sensor queimado', 11, 627),
-	(1000, 10, '2012/09/20', '11:09:58', 'lixeira desaparecida', 12, 465),
-	(788, 11, '2014/02/15', '09:10:55', 'lixeira vandalizada', 10, 110);
+	(154, 1, '2019-12-10', '10:02:10', 'lixeira com defeito no sensor', 12, 0),
+	(454, 2, '2018-03-20', '10:22:00', 'lixeira quebrada', 10, 2),
+	(399, 3, '2017-05-15', '10:32:00', 'lixeira pingando gordura', 11, 2),
+	(455, 4, '2019-06-22', '10:52:02', 'lixeira fora lugar', 25, 0),
+	(121, 5, '2019-09-19', '10:42:06', 'lixeira emperrada', 22, 0),
+	(555, 6, '2019-10-26', '10:59:08', 'sensor da lixeira travando', 13, 1),
+	(635, 7, '2016-01-24', '09:06:10', 'lixeira suja', 29, 2),
+	(74256, 8, '2016-03-05', '12:13:12', 'lixeira com fezes', 17, 2),
+	(9555, 9, '2015-09-27', '10:20:59', 'sensor queimado', 11, 2),
+	(1000, 10, '2019-09-20', '11:09:58', 'lixeira desaparecida', 12, 0),
+	(788, 11, '2014-02-15', '09:10:55', 'lixeira vandalizada', 10, 2);
 
 insert into executa (fk_MANUTENCAO_CHAMADO_id_manutencao, fk_USUARIO_id_usuario, data, hora) VALUES
 	(154, 12, '2019-12-10', '10:02:10'),
