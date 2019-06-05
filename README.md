@@ -347,6 +347,32 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 
+    insert into status
+    values(3, 'deu ruim');
+![9.5Insert1](https://github.com/coletaInt/trab01/blob/master/images/9.5Insert1.png)
+
+    insert into permissao
+    values(2, 'gerente');
+![9.5Insert2](https://github.com/coletaInt/trab01/blob/master/images/9.5Insert2.png)
+
+    insert into usuario (id_usuario, email, senha, nome, FK_PERMISSAO_id_permissao) values
+	        (33,'huguinho@ducktales.com', MD5('332068'), 'Huguinho', 1),
+	        (34,'zezinho@ducktales.com', MD5('342068'), 'Zezinho', 1),
+	        (35,'luisinho@ducktales.com', MD5('352068'), 'Luisinho', 1);
+![9.5Insert3](https://github.com/coletaInt/trab01/blob/master/images/9.5Insert3.png)
+    
+    delete from status
+    where id_status = 3;
+![9.5Delete1](https://github.com/coletaInt/trab01/blob/master/images/9.5Delete1.png)
+    
+    delete from permissao
+    where id_permissao = 2;
+![9.5Delete2](https://github.com/coletaInt/trab01/blob/master/images/9.5Delete2.png)
+    
+    delete from usuario
+    where id_usuario > 32;
+![9.5Delete3](https://github.com/coletaInt/trab01/blob/master/images/9.5Delete3.png)
+
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
