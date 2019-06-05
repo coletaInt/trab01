@@ -200,13 +200,10 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-    select * from chamado;
-![SelectChamado](https://github.com/coletaInt/trab01/blob/master/images/selectChamado.png)
-    
     select * from lixeira;
 ![SelectLixeira](https://github.com/coletaInt/trab01/blob/master/images/selectLixeira.png)
 
-    select * from manutencao;
+    select * from manutencao_chamado;
 ![SelectManutencao](https://github.com/coletaInt/trab01/blob/master/images/selectManutencao.png)
 
     select * from nv_lixo;
@@ -224,12 +221,13 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     select * from usuario;
 ![SelectUsuario](https://github.com/coletaInt/trab01/blob/master/images/selectUsuario.png)
 
-
+    select * from executa;
+![SelectExecuta](https://github.com/coletaInt/trab01/blob/master/images/selectExecuta.png)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
     select * from lixeira
-    where id_situacao = 1;
+    where fk_situacao_id_situacao = 1;
 
 ![selectLixeiraWhere](https://github.com/coletaInt/trab01/blob/master/images/selectLixeiraWhere.png)
 
@@ -244,7 +242,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ![selectNvLixoWhere](https://github.com/coletaInt/trab01/blob/master/images/selectNvLixoWhere.png)
    
     select * from usuario
-    where id_permissao = 1;
+    where fk_permissao_id_permissao = 1;
 
 ![selectUsuarioWhere](https://github.com/coletaInt/trab01/blob/master/images/selectUsuarioWhere.png)
 
@@ -254,7 +252,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     
     select * from usuario
-    where id_permissao = 1 and id_usuario > 11;
+    where fk_permissao_id_permissao = 1 and id_usuario > 11;
 ![9.3A-1](https://github.com/coletaInt/trab01/blob/master/images/9.3-1.png)    
     
     select * from nv_lixo
@@ -262,15 +260,15 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ![9.3A-2](https://github.com/coletaInt/trab01/blob/master/images/9.3-2.png)      
     
     select * from lixeira
-    where id_situacao is not null;
+    where fk_situacao_id_situacao is not null;
 ![9.3A-3](https://github.com/coletaInt/trab01/blob/master/images/9.3-3.png)  
 
     select * from lixeira
-    where id_nv_lixo <1 or id_nv_lixo >3;
+    where fk_nv_lixo_id_nv_lixo <1 or fk_nv_lixo_id_nv_lixo >3;
 ![9.3A-4](https://github.com/coletaInt/trab01/blob/master/images/9.3-4.png)      
     
     select * from lixeira
-    where id_lixeira > 5 and id_situacao = 0;
+    where id_lixeira > 5 and fk_situacao_id_situacao = 0;
 ![9.3A-5](https://github.com/coletaInt/trab01/blob/master/images/9.3-5.png)      
     
     b) Criar no mínimo 3 consultas com operadores aritméticos 
@@ -280,7 +278,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ![9.3B-1](https://github.com/coletaInt/trab01/blob/master/images/9.3B-1.png)    
     
     select * from usuario
-    where id_permissao = 0;
+    where fk_permissao_id_permissao = 0;
 ![9.3B-2](https://github.com/coletaInt/trab01/blob/master/images/9.3B-2.png) 
 
     select * from lixeira
