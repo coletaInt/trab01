@@ -321,7 +321,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
     select * from situacao
     where tipo_situacao ilike 'operante';
-![9.4A-5](https://github.com/coletaInt/trab01/blob/master/images/9.4A-6.png)   
+![9.4A-5](https://github.com/coletaInt/trab01/blob/master/images/9.4A-5.png)   
 
     b) Criar uma consulta para cada tipo de função data apresentada.
     select id_usuario,
