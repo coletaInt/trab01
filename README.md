@@ -401,10 +401,46 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+```
+select usuario.nome as "Funcionário", count(manutencao_chamado.fk_usuario_id_usuario) as "Chamados atrelados" from usuario
+inner join manutencao_chamado on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+group by usuario.nome;
+```
+
+```
+select tipo_situacao as "Situação", count(lixeira.fk_situacao_id_situacao) from situacao
+inner join lixeira on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+group by tipo_situacao;
+```
+
+```
+select lixeira.nome_lixo as "Lixeira", count(lixeira.latitude) as "Latitude 77.3214" from lixeira
+where latitude = 77.3214
+group by lixeira.nome_lixo;
+```
+
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+```
+select lixeira.nome_lixo as "Lixeira", nv_lixo.tipo_nv_lixo as "Nível do lixo" from lixeira
+inner join nv_lixo on (fk_nv_lixo_id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
+inner join situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+where lixeira.fk_nv_lixo_id_nv_lixo > 1;
+```
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+
+        ```
+select lixeira.nome_lixo as "Lixeira", nv_lixo.tipo_nv_lixo as "Nível do lixo" from lixeira
+inner join nv_lixo on (fk_nv_lixo_id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
+inner join situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+where lixeira.fk_nv_lixo_id_nv_lixo > 1;
+```
+
+```
+select lixeira.nome_lixo as "Lixeira", lixeira.fk_situacao_id_situacao as "Situação da Lixeira", nv_lixo.tipo_nv_lixo as "Nível do Lixo"
+from lixeira inner join nv_lixo on (lixeira.fk_nv_lixo_id_nv_lixo = nv_lixo.id_nv_lixo);
+```
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
