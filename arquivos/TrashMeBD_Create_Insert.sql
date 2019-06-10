@@ -169,7 +169,8 @@ insert into manutencao_chamado (id_manutencao, fk_lixeira_id_lixeira, data, hora
 	(74256, 8, '2016-03-05', '12:13:12', 'lixeira com fezes', 17, 2),
 	(9555, 9, '2015-09-27', '10:20:59', 'sensor queimado', 11, 2),
 	(1000, 10, '2019-09-20', '11:09:58', 'lixeira desaparecida', 12, 0),
-	(788, 11, '2014-02-15', '09:10:55', 'lixeira vandalizada', 10, 2);
+	(788, 11, '2014-02-15', '09:10:55', 'lixeira vandalizada', 10, 2),
+	(5050, 21, '2014-02-15', '09:10:55', 'lixeira zoada', 14, 1);
 
 insert into executa (fk_MANUTENCAO_CHAMADO_id_manutencao, fk_USUARIO_id_usuario, data, hora) VALUES
 	(154, 12, '2019-12-10', '10:02:10'),
