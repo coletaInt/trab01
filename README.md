@@ -377,6 +377,17 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
+	
+	select ex.fk_manutencao_chamado_id_manutencao, 
+		ex.fk_usuario_id_usuario,
+		manu.id_lixeira,
+		manu.descricao,
+		lix.nome_lixo
+	from executa as ex
+	inner join manutencao as manu on(ex.fk_manutencao_chamado_id_manutencao = manu.id_manutencao)
+	inner join lixeira as lix on(manu.id_lixeira = lix.id_lixeira);
+![9.6A](https://github.com/coletaInt/trab01/blob/master/images/9.6A.png)
+	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
