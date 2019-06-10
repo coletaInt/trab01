@@ -382,10 +382,21 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 		ex.fk_usuario_id_usuario,
 		manu.id_lixeira,
 		manu.descricao,
-		lix.nome_lixo
+		lix.nome_lixo,
+		chamado.fk_status_id_status,
+		status.tipo_status,
+		nvLixo.tipo_nv_lixo,
+		usu.email,
+		usu.nome,
+		perm.tipo_permissao
 	from executa as ex
 	inner join manutencao as manu on(ex.fk_manutencao_chamado_id_manutencao = manu.id_manutencao)
-	inner join lixeira as lix on(manu.id_lixeira = lix.id_lixeira);
+	inner join manutencao_chamado as chamado on(manu.id_manutencao = chamado.id_manutencao)
+	inner join status as status on(status.id_status = chamado.fk_status_id_status)
+	inner join lixeira as lix on(manu.id_lixeira = lix.id_lixeira)
+	inner join nv_lixo as nvLixo on(lix.fk_nv_lixo_id_nv_lixo = nvLixo.id_nv_lixo)
+	inner join usuario as usu on(chamado.fk_usuario_id_usuario = usu.id_usuario)
+	inner join permissao as perm on(usu.fk_permissao_id_permissao = perm.id_permissao );
 ![9.6A](https://github.com/coletaInt/trab01/blob/master/images/9.6A.png)
 	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
