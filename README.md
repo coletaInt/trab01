@@ -422,10 +422,78 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ![9.6B2](https://github.com/coletaInt/trab01/blob/master/images/9.6B2.png)
 	
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+```
+SELECT usuario.nome as "Funcionário", COUNT(manutencao_chamado.fk_usuario_id_usuario) as "Chamados atrelados"
+FROM usuario
+INNER JOIN manutencao_chamado on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+GROUP BY usuario.nome;
+```
+
+```
+SELECT tipo_situacao as "Situação", COUNT(lixeira.fk_situacao_id_situacao) FROM situacao
+INNER JOIN lixeira on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+GROUP BY tipo_situacao;
+```
+
+```
+SELECT lixeira.nome_lixo as "Lixeira", COUNT(lixeira.latitude) as "Latitude 77.3214" FROM lixeira
+WHERE latitude = 77.3214
+GROUP BY lixeira.nome_lixo;
+```
+
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+```
+SELECT usuario.nome as "Funcionário", lixeira.nome_lixo as "Lixeira",
+manutencao_chamado.descricao as "Problema",
+status.tipo_status as "Status da manutenção" FROM lixeira
+INNER JOIN manutencao_chamado on (lixeira.fk_nv_lixo_id_nv_lixo = manutencao_chamado.fk_lixeira_id_lixeira)
+LEFT OUTER JOIN usuario on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+LEFT OUTER JOIN status on (status.id_status = manutencao_chamado.fk_status_id_status)
+WHERE (status.id_status = 2)
+GROUP BY usuario.nome, lixeira.nome_lixo, manutencao_chamado.descricao, status.tipo_status;
+```
+![9.8.1](https://github.com/coletaInt/trab01/blob/master/images/9-8-1.png)
+
+```
+SELECT lixeira.nome_lixo as "Lixeira",
+nv_lixo.tipo_nv_lixo as "Nível do lixo"
+FROM lixeira LEFT OUTER JOIN nv_lixo on (nv_lixo.id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
+WHERE fk_nv_lixo_id_nv_lixo = 0;
+```
+![9.8.2](https://github.com/coletaInt/trab01/blob/master/images/9-8-2.png)
+
+```
+SELECT lixeira.nome_lixo as "Lixeira",
+situacao.tipo_situacao as "Situação" FROM lixeira
+LEFT OUTER JOIN situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+WHERE situacao.id_situacao = 1;
+```
+![9.8.3](https://github.com/coletaInt/trab01/blob/master/images/9-8-3.png)
+
+```
+SELECT lixeira.nome_lixo as "Lixeira",
+manutencao_chamado.descricao as "Problema" FROM lixeira
+LEFT OUTER JOIN manutencao_chamado on (lixeira.id_lixeira = manutencao_chamado.fk_lixeira_id_lixeira)
+WHERE manutencao_chamado is not null;
+```
+![9.8.4](https://github.com/coletaInt/trab01/blob/master/images/9-8-4.png)
+
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+
+```
+SELECT lixeira.nome_lixo as "Lixeira", nv_lixo.tipo_nv_lixo as "Nível do lixo" from lixeira
+INNER JOIN nv_lixo on (fk_nv_lixo_id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
+INNER JOIN situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
+WHERE lixeira.fk_nv_lixo_id_nv_lixo > 1;
+```
+
+```
+SELECT lixeira.nome_lixo as "Lixeira", lixeira.fk_situacao_id_situacao as "Situação da Lixeira",
+nv_lixo.tipo_nv_lixo as "Nível do Lixo" FROM lixeira
+INNER JOIN nv_lixo on (lixeira.fk_nv_lixo_id_nv_lixo = nv_lixo.id_nv_lixo);
+```
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
