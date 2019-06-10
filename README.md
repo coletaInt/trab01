@@ -113,11 +113,11 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 ```
 
 ```
-   [CHAMADO]:tabela que cliente abre para gerar uma manutençao em uma lixeira.
+   [CHAMADO]:tabela que cliente abre para gerar uma manutençao em uma lixeira especifica.
    - id_chamado: campo que contém indentificação do chamado aberto pelo cliente.
    - data: campo que contém a data que o cliente abriu o chamado.
    - id_usuario campo que contém a identificação de qual cliente fez o chamado.
-   - hora: campo que contém a hora que o chamado foi aberto pelo cliente.
+   - hora: campo que contém a hora que o chamado foi aberto pelo usuário.
 
 ```
 
@@ -147,9 +147,9 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
     [MANUTENCAO]: tabela que contém informação sobre a manutenção que foi executada ou solicitada pelo usuário.
     - id_manutencao: campo que contém a identificação da manutenção.
     - id_lixeira: campo que contém a identificação da lixeira que está sendo realizada a manutenção.
-    - data: campo que contém data que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda quando foi executada. 
-    - hora: campo que contém hora que foi feita a última alteração da tabela sendo a primeira a solicitaçao e a segunda - quando foi executada. 
-    - descricao: campo que contém a descrição da manutenção ou do pedido ou da atividade 
+    - data: campo que contém data que foi feita a última alteração da tabela sendo a primeira a solicitação e a segunda quando foi executada. 
+    - hora: campo que contém hora que foi feita a última alteração da tabela sendo a primeira a solicitação e a segunda - quando foi executada. 
+    - descricao: campo que contém a descrição da manutenção ou do pedido ou da atividade.
 ```
 
 ```
