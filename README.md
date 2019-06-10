@@ -388,7 +388,8 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 		nvLixo.tipo_nv_lixo,
 		usu.email,
 		usu.nome,
-		perm.tipo_permissao
+		perm.tipo_permissao,
+		situ.tipo_situacao
 	from executa as ex
 	inner join manutencao as manu on(ex.fk_manutencao_chamado_id_manutencao = manu.id_manutencao)
 	inner join manutencao_chamado as chamado on(manu.id_manutencao = chamado.id_manutencao)
@@ -396,51 +397,35 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 	inner join lixeira as lix on(manu.id_lixeira = lix.id_lixeira)
 	inner join nv_lixo as nvLixo on(lix.fk_nv_lixo_id_nv_lixo = nvLixo.id_nv_lixo)
 	inner join usuario as usu on(chamado.fk_usuario_id_usuario = usu.id_usuario)
-	inner join permissao as perm on(usu.fk_permissao_id_permissao = perm.id_permissao );
+	inner join permissao as perm on(usu.fk_permissao_id_permissao = perm.id_permissao )
+	inner join situacao as situ on (lix.fk_situacao_id_situacao = situ.id_situacao);
 ![9.6A](https://github.com/coletaInt/trab01/blob/master/images/9.6A.png)
 	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+	
+	
+	select usu.email,
+		usu.id_usuario,
+		usu.nome,
+		perm.tipo_permissao
+	from usuario as usu
+	inner join permissao as perm on(usu.fk_permissao_id_permissao = perm.id_permissao );
+![9.6B1](https://github.com/coletaInt/trab01/blob/master/images/9.6B1.png)
+
+	select lix.id_lixeira,
+		lix.nome_lixo,
+		nvLixo.tipo_nv_lixo,
+		situ.tipo_situacao
+	from lixeira as lix
+	inner join nv_lixo as nvLixo on(lix.fk_nv_lixo_id_nv_lixo = nvLixo.id_nv_lixo)
+	inner join situacao as situ on (lix.fk_situacao_id_situacao = situ.id_situacao);
+![9.6B2](https://github.com/coletaInt/trab01/blob/master/images/9.6B2.png)
+	
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-```
-select usuario.nome as "Funcionário", count(manutencao_chamado.fk_usuario_id_usuario) as "Chamados atrelados" from usuario
-inner join manutencao_chamado on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
-group by usuario.nome;
-```
-
-```
-select tipo_situacao as "Situação", count(lixeira.fk_situacao_id_situacao) from situacao
-inner join lixeira on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
-group by tipo_situacao;
-```
-
-```
-select lixeira.nome_lixo as "Lixeira", count(lixeira.latitude) as "Latitude 77.3214" from lixeira
-where latitude = 77.3214
-group by lixeira.nome_lixo;
-```
-
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-```
-select lixeira.nome_lixo as "Lixeira", nv_lixo.tipo_nv_lixo as "Nível do lixo" from lixeira
-inner join nv_lixo on (fk_nv_lixo_id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
-inner join situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
-where lixeira.fk_nv_lixo_id_nv_lixo > 1;
-```
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
-
-```
-select lixeira.nome_lixo as "Lixeira", nv_lixo.tipo_nv_lixo as "Nível do lixo" from lixeira
-inner join nv_lixo on (fk_nv_lixo_id_nv_lixo = lixeira.fk_nv_lixo_id_nv_lixo)
-inner join situacao on (lixeira.fk_situacao_id_situacao = situacao.id_situacao)
-where lixeira.fk_nv_lixo_id_nv_lixo > 1;
-```
-
-```
-select lixeira.nome_lixo as "Lixeira", lixeira.fk_situacao_id_situacao as "Situação da Lixeira", nv_lixo.tipo_nv_lixo as "Nível do Lixo"
-from lixeira inner join nv_lixo on (lixeira.fk_nv_lixo_id_nv_lixo = nv_lixo.id_nv_lixo);
-```
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
