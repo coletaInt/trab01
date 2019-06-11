@@ -494,6 +494,40 @@ SELECT lixeira.nome_lixo as "Lixeira", lixeira.fk_situacao_id_situacao as "Situa
 nv_lixo.tipo_nv_lixo as "Nível do Lixo" FROM lixeira
 INNER JOIN nv_lixo on (lixeira.fk_nv_lixo_id_nv_lixo = nv_lixo.id_nv_lixo);
 ```
+
+```
+select lixeira.nome_lixo as "Lixeira", manutencao_chamado.hora as "Hora" from lixeira
+inner join manutencao_chamado on (lixeira.id_lixeira = manutencao_chamado.fk_lixeira_id_lixeira)
+where manutencao_chamado.hora < '10:00:00'
+```
+
+```
+select lixeira.nome_lixo as "Lixeira", manutencao_chamado.hora as "Hora", situacao.tipo_situacao as "Situação" from lixeira
+inner join manutencao_chamado on (lixeira.id_lixeira = manutencao_chamado.fk_lixeira_id_lixeira)
+inner join situacao on (situacao.id_situacao = lixeira.fk_situacao_id_situacao)
+where manutencao_chamado.hora < '10:00:00'
+and situacao.id_situacao = 0;
+```
+
+```
+select usuario.nome as "Funcionário", lixeira.nome_lixo as "Lixeira", manutencao_chamado.data as "Data", manutencao_chamado.hora as "Hora", situacao.tipo_situacao as "Situação" from lixeira
+inner join manutencao_chamado on (lixeira.id_lixeira = manutencao_chamado.fk_lixeira_id_lixeira)
+inner join usuario on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+inner join situacao on (situacao.id_situacao = lixeira.fk_situacao_id_situacao)
+where manutencao_chamado.id_manutencao >= 500;
+```
+
+```
+select usuario.nome as "Funcionário", lixeira.nome_lixo as "Lixeira", manutencao_chamado.descricao as "Problemas" from lixeira
+inner join manutencao_chamado on (lixeira.id_lixeira = manutencao_chamado.fk_lixeira_id_lixeira)
+inner join usuario on (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+inner join executa on (executa.fk_manutencao_chamado_id_manutencao = manutencao_chamado.id_manutencao
+and executa.fk_usuario_id_usuario = usuario.id_usuario)
+where manutencao_chamado.fk_status_id_status in (0);
+```
+
+
+
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
