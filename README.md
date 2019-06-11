@@ -24,7 +24,7 @@ Em relação ao condomínio, ou ao síndico, caberia a ele cadastrar o código d
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-[Protótipo](https://github.com/coletaInt/trab01/blob/master/arquivos/mockup trashme.pdf)
+[Protótipo](https://github.com/coletaInt/trab01/blob/master/arquivos/mockup_trashme.pdf)
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
 * Relatório do volume atual das lixeiras que informe: ID da lixeira, data e hora da última atualização, seu volume anterior e o atual;
