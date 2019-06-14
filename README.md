@@ -562,6 +562,10 @@ WHERE manutencao_chamado.fk_status_id_status IN (0)
 GROUP BY lixeira.nome_lixo;
 ```
 ![9.10-3](https://github.com/coletaInt/trab01/blob/master/images/9-10-3.png)
+
+#### 9.11 Relatórios e Gráficos<br>
+[Relatórios usando Jupyter](https://github.com/coletaInt/trab01/blob/master/arquivos/relatorio.ipynb)<br>
+
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
