@@ -565,7 +565,7 @@ GROUP BY lixeira.nome_lixo;
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
-Arquivo de Backup: [ColetaInt.backup](https://github.com/coletaInt/trab01/blob/master/arquivos/ColetaInt.backup)<br>
+Arquivo de Backup: [ColetaInt.backup](https://github.com/coletaInt/trab01/blob/master/arquivos/coletaInt.backup)<br>
 <b>[Grupo tester]</b>: [Coleta Inteligente]: [Lavinia Corteletti, Jackson William, Thiago Moreira, Vinicius Freitas] <br>
 
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
