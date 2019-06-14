@@ -539,6 +539,29 @@ where manutencao_chamado.fk_status_id_status in (0);
 
 
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
+```
+SELECT lixeira.nome_lixo as "Lixeira", COUNT(manutencao_chamado.fk_status_id_status) as "Status" FROM lixeira
+INNER JOIN manutencao_chamado ON (lixeira.fk_nv_lixo_id_nv_lixo = manutencao_chamado.fk_lixeira_id_lixeira)
+WHERE manutencao_chamado.fk_status_id_status IN (2)
+GROUP BY lixeira.nome_lixo;
+```
+![9.10-1](https://github.com/coletaInt/trab01/blob/master/images/9.10-1.png)
+
+```
+SELECT usuario.nome as "Funcionário", COUNT(manutencao_chamado.fk_usuario_id_usuario) as "Manutenções" FROM usuario
+INNER JOIN manutencao_chamado ON (usuario.id_usuario = manutencao_chamado.fk_usuario_id_usuario)
+WHERE usuario.id_usuario NOT IN (13)
+GROUP BY usuario.nome;
+```
+![9.10-2](https://github.com/coletaInt/trab01/blob/master/images/9.10-2.png)
+
+```
+SELECT lixeira.nome_lixo as "Lixeira", COUNT(manutencao_chamado.fk_lixeira_id_lixeira) as "Manutenções sofridas e finalizadas" FROM lixeira
+INNER JOIN manutencao_chamado ON (lixeira.fk_nv_lixo_id_nv_lixo = manutencao_chamado.fk_lixeira_id_lixeira)
+WHERE manutencao_chamado.fk_status_id_status IN (0) 
+GROUP BY lixeira.nome_lixo;
+```
+![9.10-3](https://github.com/coletaInt/trab01/blob/master/images/9.10-3.png)
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
