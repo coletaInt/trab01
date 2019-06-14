@@ -565,16 +565,11 @@ GROUP BY lixeira.nome_lixo;
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
-    a) deve ser realizado no formato "backup" 
-        (Em Dump Options #1 Habilitar opções Don't Save Owner e Privilege)
-    b) antes de postar o arquivo no git o mesmo deve ser testado/restaurado por outro grupo de alunos/dupla
-    c) informar aqui o grupo de alunos/dupla que realizou o teste.
+Arquivo de Backup: [ColetaInt.backup](https://github.com/coletaInt/trab01/blob/master/arquivos/ColetaInt.backup)<br>
+<b>[Grupo tester]</b>: [Coleta Inteligente]: [Lavinia Corteletti, Jackson William, Thiago Moreira, Vinicius Freitas] <br>
 
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
-        a) Outros grupos deverão ser capazes de restaurar o banco 
-        b) executar todas as consultas presentes no trabalho
-        c) executar códigos que tenham sido construídos para o trabalho 
-        d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
+Tutorial: [Tutorial.pdf](https://github.com/coletaInt/trab01/blob/master/arquivos/tutorial-db.pdf)<br>
         
 ### 13   DIFICULDADES ENCONTRADAS PELO GRUPO<br>
 >## Marco de Entrega Final em: (08/11/2018)<br>
